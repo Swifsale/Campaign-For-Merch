@@ -42,3 +42,44 @@ function animate(now) {
 }
 
 requestAnimationFrame(animate);
+
+/* ---------------------------------------------------------------------
+   KEMBALI KE TOTEM
+   Tombol hanya muncul bila halaman dibuka dari totem SWIF ASIA
+   (link berakhiran ?from=totem). Tombol menutup tab ini sehingga tab
+   totem tampil kembali. Tanpa sentuhan selama AUTO_RETURN_MS, tab
+   kembali ke totem secara otomatis.
+   --------------------------------------------------------------------- */
+const AUTO_RETURN_MS = 180000; // 3 menit
+
+(function setupBackToTotem() {
+  const params = new URLSearchParams(location.search);
+  if (params.get("from") !== "totem") return;
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "back-to-totem";
+  btn.setAttribute("aria-label", "Kembali ke totem");
+  btn.innerHTML = '<span class="btt-arrow" aria-hidden="true">&#8592;</span><span class="btt-label">KEMBALI<br>KE TOTEM</span>';
+  document.body.appendChild(btn);
+
+  function backToTotem() {
+    // Tab ini dibuka oleh totem lewat window.open, jadi boleh ditutup oleh skrip.
+    window.close();
+    // Bila browser menolak menutup tab, kembali ke halaman sebelumnya.
+    setTimeout(() => {
+      if (document.referrer) location.href = document.referrer;
+      else history.back();
+    }, 400);
+  }
+
+  btn.addEventListener("click", backToTotem);
+
+  let idleTimer = setTimeout(backToTotem, AUTO_RETURN_MS);
+  ["pointerdown", "keydown"].forEach((evt) =>
+    window.addEventListener(evt, () => {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(backToTotem, AUTO_RETURN_MS);
+    }, { passive: true })
+  );
+})();
