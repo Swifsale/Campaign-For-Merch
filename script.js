@@ -1,4 +1,3 @@
-// Ganti handle di bawah dengan username Instagram resmi SWIF ASIA.
 const INSTAGRAM_HANDLE = "@swifasia";
 const CHANGE_EVERY_MS = 10000;
 
