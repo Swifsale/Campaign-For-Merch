@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#080b16">
+  <title>Foto Bareng SWIFI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="screen" aria-label="Booth foto bersama SWIFI">
+    <div class="ambient ambient-orange"></div>
+    <div class="ambient ambient-blue"></div>
+
+    <header class="heading">
+      <div class="eyebrow"><span class="eyebrow-line"></span> SWIF ASIA PRESENTS <span class="eyebrow-line"></span></div>
+      <h1>FOTO BARENG<br><span>SWIFI!</span></h1>
+      <p class="subtitle">Abadikan momen serumu bersama SWIFI</p>
+    </header>
+
+    <section class="character-stage" aria-label="Pose SWIFI berganti otomatis">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="spark spark-one">✦</div>
+      <div class="spark spark-two">✧</div>
+      <img id="poseA" class="character active" src="assets/swifi-heart.png" alt="SWIFI berpose membentuk hati">
+      <img id="poseB" class="character" src="assets/swifi-peace.png" alt="SWIFI berpose peace">
+      <div class="speech-bubble" id="poseCaption" aria-live="polite">
+        Kirim hati untuk SWIFI!
+        <span class="bubble-tail"></span>
+      </div>
+    </section>
+
+    <footer class="call-to-action">
+      <div class="gift-label"><span class="gift-icon">✦</span> DAPATKAN GOODYBAG!</div>
+      <div class="steps">
+        <div class="step"><span class="step-number">01</span><span>Foto bareng SWIFI</span></div>
+        <div class="step"><span class="step-number">02</span><span>Upload Instagram Story</span></div>
+        <div class="step"><span class="step-number">03</span><span>Tag <strong id="instagramHandle">@swifasia</strong></span></div>
+      </div>
+      <div class="bottom-note">Tunjukkan Instagram Story-mu kepada tim booth untuk klaim hadiah</div>
+    </footer>
+
+    <div class="slide-progress" aria-hidden="true"><div id="progressBar"></div></div>
+    <div class="slide-count" id="slideCount">01 / 05</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
