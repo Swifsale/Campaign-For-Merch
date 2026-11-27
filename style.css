@@ -107,3 +107,19 @@ h1 span { color:#ffd36a; text-shadow:0 0 24px rgba(255,172,56,.3), 0 5px 0 rgba(
   .speech-bubble { right: 8px; width: 29vw; min-width: 145px; }
   .speech-bubble-text { font-size: clamp(10px, 1.15vh, 13px); }
 }
+
+/* Tombol kembali ke totem (hanya tampil bila dibuka dari totem: ?from=totem).
+   Ringkas di pojok kiri atas agar tidak menutupi judul. */
+.back-to-totem {
+  position: fixed; z-index: 50; top: clamp(10px, 1.3vh, 24px); left: clamp(10px, 2vw, 26px);
+  width: clamp(76px, 10.5vw, 116px); aspect-ratio: 1; padding: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  border: 2px solid rgba(255, 211, 106, .9); border-radius: 50%; cursor: pointer;
+  background: linear-gradient(135deg, rgba(255,122,24,.95), rgba(214,72,10,.95));
+  color: #fff; font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 800;
+  box-shadow: 0 8px 22px rgba(0,0,0,.4), 0 0 18px rgba(255,122,24,.35);
+  -webkit-tap-highlight-color: transparent;
+}
+.back-to-totem:active { transform: scale(.94); }
+.back-to-totem .btt-arrow { font-size: clamp(24px, 3.4vw, 40px); line-height: .9; }
+.back-to-totem .btt-label { font-size: clamp(10px, 1.35vw, 15px); letter-spacing: .08em; line-height: 1.05; text-align: center; }
